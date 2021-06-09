@@ -1,6 +1,6 @@
-export const incAction = {
-    type:"INCREMENT"
+export const loginAction = {
+    type:"LOGIN"
 }
-export const decAction = {
-    type:"DECREMENT"
+export const logOutAction = {
+    type:"LOGOUT"
 }

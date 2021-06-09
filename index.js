@@ -6,6 +6,7 @@ import {createStore} from 'redux'
 import {rootReducer} from './redux/reducer'
 import {BrowserRouter} from 'react-router-dom'
 
+
 const store = createStore(rootReducer)
 
 ReactDOM.render(

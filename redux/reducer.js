@@ -1,14 +1,18 @@
-export const rootReducer = (state = {count:0},action) =>{
+export const rootReducer = (state = {
+        loginStatus:false,
+        email:"test@tester.com",
+        password:"12345"
+    },action) =>{
     switch (action.type) {
-        case "INCREMENT":
+        case "LOGIN":
             return {
                 ...state,
-                count:state.count+1
+                loginStatus:true
             }
-        case "DECREMENT":
+        case "LOGOUT":
             return {
                 ...state,
-                count:state.count-1
+                loginStatus:false
             }
             
         default:

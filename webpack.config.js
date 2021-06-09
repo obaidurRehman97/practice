@@ -4,8 +4,8 @@ module.exports = {
     mode:'development',
     entry:path.join(__dirname,'./index.js'),
     output:{
-        path:__dirname,
-        filename:'app.js'
+        path:__dirname+'/dist/',
+        filename:'bundle.js'
     },
     module:{
         rules:[

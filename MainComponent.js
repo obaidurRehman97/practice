@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import ComponentOne from './components/ComponentOne'
 import ComponentTwo from './components/ComponentTwo'
+import Login from './views/Login'
 
 
 const MainComponent = (props) => {

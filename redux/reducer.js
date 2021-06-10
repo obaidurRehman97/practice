@@ -1,8 +1,4 @@
-export const rootReducer = (state = {
-        loginStatus:false,
-        email:"test@tester.com",
-        password:"12345"
-    },action) =>{
+export const rootReducer = (state,action) =>{
     switch (action.type) {
         case "LOGIN":
             return {

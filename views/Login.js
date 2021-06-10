@@ -15,7 +15,7 @@ const Login = (props) => {
             history.push('/home')
         }
     }
-    console.log(props)
+    
     return (
         <Alert variant='primary' className="d-flex justify-content-center">
             <Row>

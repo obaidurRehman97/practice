@@ -39,7 +39,7 @@ const initialStore = persistedStore ? persistedStore : {
 
 const store = createStore(rootReducer,initialStore)
 
-console.log(store.getState())
+// console.log(store.getState())
 
 store.subscribe(() => {
     saveState({

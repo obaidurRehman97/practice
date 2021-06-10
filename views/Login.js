@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Alert,Row,Col,Form,Button} from 'react-bootstrap'
+import {Alert,Row,Col,Form,Button,Toast,ToastBody,ToastHeader} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.css'
 import {loginAction} from '../redux/action'
@@ -8,11 +8,16 @@ import {useHistory} from 'react-router-dom'
 const Login = (props) => {
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
+    const [toast,setToast] = useState(false)
     const history = useHistory()
+
+    
     const handleSubmit = () => {
         if(email === props.rEmail && password === props.rPassword){
             props.dispatch(loginAction)
             history.push('/home')
+        }else if(email !== props.rEmail || password !== props.rPassword){
+            setToast(true)
         }
     }
     
@@ -37,6 +42,16 @@ const Login = (props) => {
                     </Form>
                 </Col>
             </Row>
+                <Col className="float-md-right">
+                    <Toast show={toast} onClose={() => setToast(false)}>
+                        <ToastHeader>
+                            Login Failed
+                        </ToastHeader>
+                        <ToastBody>
+                            Please Login with correct credentials
+                        </ToastBody>
+                    </Toast>
+                </Col>
         </Alert>
     )
 }

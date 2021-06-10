@@ -1,4 +1,3 @@
-import {Login,Home,About} from './views'
 
 export const routes = [
     {

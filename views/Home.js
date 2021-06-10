@@ -26,7 +26,7 @@ const Home = (props) => {
                         <Sidebar routes={routes}/>
                     </Col>
                     <Col>
-                        <InfoSection/>
+                        <InfoSection email={props.rEmail}/>
                     </Col>
                 </Row>
             </Container>

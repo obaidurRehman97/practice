@@ -1,8 +1,6 @@
 import React from 'react'
-import Login from './views/Login'
-import {BrowserRouter as Router, Switch,Link,Route} from 'react-router-dom'
-import Home from './views/Home'
-import About from './views/About'
+import {BrowserRouter as Router, Switch,Route} from 'react-router-dom'
+import {Home,About,Login} from './views'
 
 const MainComponent = () => {
     return (

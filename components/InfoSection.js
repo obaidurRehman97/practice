@@ -2,6 +2,7 @@ import React,{useContext} from 'react'
 import {Jumbotron,Button} from 'react-bootstrap'
 import {NameContext} from '../views/Home'
 
+
 const InfoSection = () => {
     const name = useContext(NameContext)
     return (

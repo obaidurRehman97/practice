@@ -5,8 +5,11 @@ import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 import {routes} from '../routes'
 import InfoSection from '../components/InfoSection'
+const NameContext = React.createContext()
+
 
 const Home = (props) => {
+    
     if(!props.loginStatus){
         return(
             <Alert variant='danger'>
@@ -15,7 +18,7 @@ const Home = (props) => {
         )
     }else if(props.loginStatus){
         return(
-            <Container fluid>
+            <div>
                 <Row>
                     <Col>
                         <Navbar/>
@@ -26,10 +29,12 @@ const Home = (props) => {
                         <Sidebar routes={routes}/>
                     </Col>
                     <Col>
-                        <InfoSection/>
+                        <NameContext.Provider value="Obaid">
+                            <InfoSection/>
+                        </NameContext.Provider>
                     </Col>
                 </Row>
-            </Container>
+            </div>
         )
     }
 }
@@ -40,4 +45,6 @@ const mapStateToProps = (state) => {
       rPassword:state.password
     }
 }
+
+export {NameContext}
 export default connect(mapStateToProps)(Home)

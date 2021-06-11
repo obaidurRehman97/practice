@@ -1,4 +1,3 @@
-import {Login,Home,About} from './views'
 
 export const routes = [
     {
@@ -8,5 +7,9 @@ export const routes = [
     {
         path:'/about',
         name:"About"
+    },
+    {
+        path:'/people',
+        name:"People"
     }
 ]

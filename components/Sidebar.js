@@ -10,9 +10,9 @@ const Sidebar = ({routes}) => {
                 
                 <ul className="nav nav-pills flex-column mb-auto">
                 {
-                    routes.map((route,key) => {
+                    routes.map((route,i) => {
                         return(
-                            <li className="nav-item">
+                            <li className="nav-item" key={i}>
                                 <Link className="nav-link" to={route.path}>
                                 {route.name}
                                 </Link>

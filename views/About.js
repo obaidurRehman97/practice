@@ -14,7 +14,7 @@ const About = (props) => {
         )}
         else if(props.loginStatus){
             return (
-                <Container fluid>
+                <div>
                     <Row>
                         <Col>
                             <Navbar/>
@@ -37,7 +37,7 @@ const About = (props) => {
                             </div>
                         </Col>
                     </Row>
-                </Container>
+                </div>
             )
         }
     

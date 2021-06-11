@@ -3,7 +3,7 @@ var webpack = require('webpack')
 
 module.exports = {
     mode:'development',
-    entry:path.join(__dirname,'./index.js'),
+    entry:["@babel/polyfill","./index.js"],
     output:{
         path:__dirname+'/dist/',
         filename:'bundle.js'
@@ -17,9 +17,14 @@ module.exports = {
                 test:/\.(js|jsx)$/,
                 exclude:/node_modules/,
                 use:'babel-loader'
-            },{
+            },
+            {
                 test: /\.css$/,
                 use:['style-loader','css-loader']
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use:'file-loader'
             }
         ]
     }

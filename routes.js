@@ -7,5 +7,9 @@ export const routes = [
     {
         path:'/about',
         name:"About"
+    },
+    {
+        path:'/people',
+        name:"People"
     }
 ]

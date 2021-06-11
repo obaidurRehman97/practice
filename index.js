@@ -48,12 +48,14 @@ store.subscribe(() => {
         password:store.getState().password
     })
 })
-
+export const NewContext = React.createContext()
 
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
-            <MainComponent/>
+            <NewContext.Provider value="John Doe">
+                <MainComponent/>
+            </NewContext.Provider>
         </BrowserRouter>
     </Provider>
     ,document.getElementById('root'))

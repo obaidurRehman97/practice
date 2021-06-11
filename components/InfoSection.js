@@ -1,10 +1,10 @@
 import React,{useContext} from 'react'
 import {Jumbotron,Button} from 'react-bootstrap'
-import {NameContext} from '../views/Home'
+import {NewContext} from '../index'
 
 
 const InfoSection = () => {
-    const name = useContext(NameContext)
+    const name = useContext(NewContext)
     return (
         <Jumbotron>
             <h1>Hello, {name}</h1>

@@ -5,7 +5,7 @@ import InfoCard from '../components/InfoCard'
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 import {routes} from '../routes'
-import axios from 'axios'
+import UsersServices from '../services/users.services'
 
 
 
@@ -13,15 +13,15 @@ const People = (props) => {
     const [people,setPeople] = useState([])
     const getData = async () => {
         try {
-            const res = await axios.get('https://jsonplaceholder.typicode.com/users');
-            return res.data
+            let data = await UsersServices.getAllUsers();
+            setPeople(data.data)
         } catch (e) {
             console.log(e)
         }
     }
 
     useEffect(() => {
-        getData().then(value => setPeople(value))
+        getData()
     },[])
 
     if(!props.loginStatus){

@@ -1,10 +1,11 @@
 import React from 'react'
 import {Card,Button} from 'react-bootstrap'
 
-const Post = ({title,body,postId}) => {
+const Post = ({title,body,name}) => {
+
     return (
         <Card style={{marginTop:10}}>
-            <Card.Header as="h5">Post No. {postId}</Card.Header>
+            <Card.Header as="h5">Post by {name}</Card.Header>
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>

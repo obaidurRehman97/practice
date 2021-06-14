@@ -4,7 +4,7 @@ import PlaceHolder from '../assets/Portrait_Placeholder.png'
 
 const InfoCard = ({info}) => {
     return (
-        <Card style={{width: '20rem',marginRight:20}}>
+        <Card border="primary" style={{width: '20rem',marginRight:20,marginTop:20}}>
             <Card.Img variat="top" src={PlaceHolder} />
             <Card.Body>
                 <Card.Title>{info.name}</Card.Title>

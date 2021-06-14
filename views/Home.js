@@ -56,7 +56,7 @@ const Home = (props) => {
                             {
                                 currentPosts.map((item,index) => {
                                     return(
-                                        <Post title = {item.title} body = {item.body}/>
+                                        <Post title = {item.title} body = {item.body} postId = {item.id}/>
                                     )
                                 })
                             }

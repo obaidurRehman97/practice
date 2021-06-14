@@ -24,11 +24,12 @@ const Navbar = (props) => {
                                 <Link className="nav-link" to='/home'>Home</Link>
                             </li>
                             <li className="nav-item active">
-                                <Link className="nav-link" to='/about'>About</Link>
-                            </li>
-                            <li className="nav-item active">
                                 <Link className="nav-link" to='/people'>People</Link>
                             </li>
+                            <li className="nav-item active">
+                                <Link className="nav-link" to='/about'>About</Link>
+                            </li>
+                            
                         </ul>
                         <Link className="btn btn-primary" to='/' onClick={handleLogout}>Log out</Link>
                     </div>

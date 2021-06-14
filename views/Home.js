@@ -1,23 +1,31 @@
 import React,{useState,useEffect} from 'react'
 import { connect } from 'react-redux'
-import {Alert, Col, Container, Row} from 'react-bootstrap'
+import {Alert, Col, Container, Row,Pagination} from 'react-bootstrap'
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 import {routes} from '../routes'
 import InfoSection from '../components/InfoSection'
 import PostsServices from '../services/posts.services'
 import Post from '../components/Post'
+import PaginationComponent from '../components/PaginationComponent'
 const NameContext = React.createContext()
 
 
 const Home = (props) => {
     const [posts,setPosts] = useState([])
+    const [currentPage,setCurrentPage] = useState(1)
+    const [postsPerPage] = useState(10)
+
+    const indexOfLastPost = currentPage * postsPerPage
+    const indexOfFirstPost = indexOfLastPost - postsPerPage
+    const currentPosts = posts.slice(indexOfFirstPost,indexOfLastPost)
+    const paginate = pageNumber => setCurrentPage(pageNumber)
 
     const getAllPosts = async () => {
         let data = await PostsServices.getAllPosts();
         setPosts(data.response)
     }
-    
+
     useEffect(() => {
         getAllPosts()
     },[])
@@ -46,12 +54,13 @@ const Home = (props) => {
                         </NameContext.Provider>
                         <Container>
                             {
-                                posts.map((item,index) => {
+                                currentPosts.map((item,index) => {
                                     return(
-                                        <Post title = {item.title} body = {item.body}/>
+                                        <Post title = {item.title} body = {item.body} postId = {item.id}/>
                                     )
                                 })
                             }
+                            <PaginationComponent postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
                         </Container>
                     </Col>
                 </Row>
